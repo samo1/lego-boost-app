@@ -1,8 +1,8 @@
 import LegoBoost from 'lego-boost-browser';
 import * as React from 'react';
-import { Grid } from 'semantic-ui-react';
+import {Grid} from 'semantic-ui-react';
 
-import { ControlMode } from '../Models';
+import {ControlMode} from '../Models';
 
 interface ManualControlProps {
   boost: LegoBoost;
@@ -50,10 +50,12 @@ class ManualControl extends React.Component<ManualControlProps, ManualControlSta
         await this.props.boost.stop();
         break;
       case Command.Left:
-        await this.props.boost.turn(-90 * (this.state.mode === ControlMode.Click ? 1 : 400));
+        // await this.props.boost.turn(-90 * (this.state.mode === ControlMode.Click ? 1 : 400));
+        await this.props.boost.motorAngle('C', 10, 100);
         break;
       case Command.Right:
-        await this.props.boost.turn(90 * (this.state.mode === ControlMode.Click ? 1 : 400));
+        // await this.props.boost.turn(90 * (this.state.mode === ControlMode.Click ? 1 : 400));
+        await this.props.boost.motorAngle('C', 10, -100);
         break;
       case Command.Up:
         await this.props.boost.driveToDirection();
