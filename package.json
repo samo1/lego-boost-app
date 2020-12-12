@@ -7,7 +7,8 @@
     "build": "rescripts build",
     "test": "rescripts test --env=jsdom",
     "eject": "rescripts eject",
-    "lint": "tsc --noEmit && tslint --project ./tsconfig.json"
+    "lint": "tsc --noEmit && tslint --project ./tsconfig.json",
+    "build-docker": "docker build -t samo64/lego-boost-app:sva01l ."
   },
   "dependencies": {
     "lego-boost-browser": "git+https://github.com/samo1/lego-boost-browser.git",
